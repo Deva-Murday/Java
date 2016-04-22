@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
-// Test GitHub 
 public class ConvertorTest {
 	String answer = "yes";
 	double number = 150;
