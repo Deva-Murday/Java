@@ -6,6 +6,7 @@ public class Convertor {
 
 	public static void main(String[] args) {
 		double number;
+		double number22;
 		String convertor;
 		
 	while (!answer().equals("no")) {
