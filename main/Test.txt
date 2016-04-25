@@ -1,3 +1,0 @@
-public class TestingString var1;
-String var2;
-publicpublic static void main(String[] args) {System.out.prinln("hello" + var1);
