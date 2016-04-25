@@ -15,11 +15,7 @@ public class JavaMaker {
 	
 public static void main(String[] args) throws IOException {
 	Scanner sc = new Scanner(System.in);
-	
 	BufferedWriter bw = null;
-	System.out.println("Hi, do you want to edit a JavaClass or create a new one ?");
-	answer = sc.nextLine();
-	if (answer.equals("edit")) {
 		System.out.println("What is the name of the Java Class ?");
 		javaclass = sc.nextLine();
 		file = "C:/Users/Devilz/Desktop/Cours/DUT R&T/Bergen/Java/Git/Practice/main/" + javaclass + ".java";
@@ -73,4 +69,3 @@ public static void main(String[] args) throws IOException {
     bw.write ("\r\n" + "}");
     bw.close();
 	}}
-}
