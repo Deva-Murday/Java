@@ -1,6 +1,7 @@
 package main;
 
 import java.util.Scanner;
+import main.Answer;
 
 public class Convertor {
 
@@ -9,7 +10,7 @@ public class Convertor {
 		double number22;
 		String convertor;
 		
-	while (!answer().equals("no")) {
+	while (!Answer.answer().equals("no")) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Do you want to convert money, temperature or distance");
 		convertor = sc.nextLine();		
@@ -30,6 +31,7 @@ public class Convertor {
 	System.out.println("Bye !");
 }
 	
+
 	public static double money(double number) {
 		String unit;
 		String res;
@@ -128,15 +130,6 @@ public class Convertor {
 		return number + "°C"; }
 	}
 	
-	public static String answer() {
-		String answer;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Do you want to continue ?"); 
-		answer = sc.nextLine();
-		if (answer.equals("no")) {
-			answer = "no";
-			return answer;	}
-		return answer;
-	}
+	
 
 }
