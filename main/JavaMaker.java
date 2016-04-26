@@ -11,11 +11,10 @@ import main.Answer;
 public class JavaMaker {
 	static String var1, file, javaclass, javatype, javamain, javapackage, answer ;
 
-	
 public static void main(String[] args) throws IOException {
 	Scanner sc = new Scanner(System.in);
 	
-	System.out.println("Hi, do you wan to continue editing your class or start from scratch ?");
+	System.out.println("Hi, do you want to continue editing your class or start from scratch ?");
 	answer = sc.nextLine();
 	System.out.println("What is the name of the Java Class ?");
 	javaclass = sc.nextLine();
@@ -62,6 +61,7 @@ public static void scratch(String file) throws IOException {
 	if (answer.equals("yes")) {
 		bws.write(javatype + " static void main(String[] args) {");
 		bws.write ("\r\n"); }
+	
 	System.out.println("Does your class contains a Scanner ?");
 	answer = scs.nextLine();
 	if (answer.equals("yes")) {
@@ -69,12 +69,15 @@ public static void scratch(String file) throws IOException {
 		String scannername = scs.nextLine();
 		bws.write("Scanner " + scannername + "= new Scanner(System.in)");
 		bws.write ("\r\n"); }
+	
 	while (!(Answer.answerPrintln().equals("no"))) {
 		System.out.println("What is the message ?");
 		String msg = scs.nextLine();
 		bws.write ("\t" + "System.out.println(" +msg+ ");");
 		bws.write ("\r\n");	}
 	}
+	
+	
     System.out.println("Bye !");
     if (answer.equals("yes")) { bws.write("\t" + "}"); }
     bws.write ("\r\n" + "}");
