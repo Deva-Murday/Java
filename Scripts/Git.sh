@@ -10,7 +10,7 @@ fi
 
 # Commiter
 if [ $1 = '-c' ];then
-	git commit -m "${1:10}"
+	git commit -m "${2:10}"
 fi
 
 # Recap
