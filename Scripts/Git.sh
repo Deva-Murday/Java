@@ -8,6 +8,11 @@ if [ $1 = '-a' ];then
 	echo -e '\e[1;33m' " !!! N'oublie pas de commiter !!!"
 fi
 
+# Commiter
+if [ $1 = '-c' ];then
+	git commit -m "${2:10}"
+fi
+
 # Recap
 if [ $1 = '-recap' ];then
 	git status
