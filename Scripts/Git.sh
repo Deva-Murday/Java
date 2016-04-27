@@ -7,6 +7,12 @@ if [ $1 = '-a' ];then
 	git status
 	echo -e '\e[1;33m' " !!! N'oublie pas de commiter !!!"
 fi
+# Ajouter un commit
+if [ $1 = '-c' ];then
+	echo "Quel est le message ?"
+	read $msg
+	git commit -m $msg
+fi
 
 
 # Recap
