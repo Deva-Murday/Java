@@ -1,42 +1,46 @@
 #!/bin/bash
 
 
-# Ajouter un fichier
+# Add a file
 if [ $1 = '-a' ];then
 	git add $2
 	git status
-	echo -e '\e[1;33m' " !!! N'oublie pas de commiter !!!"
+	echo -e '\e[1;33m' " !!! Don't forget to commit !!!"
 fi
-# Ajouter un commit
-if [ $1 = '-c' ];then
-	echo "Quel est le message ?"
+# Add a commit (m)
+if [ $1 = '-c' ] && [ $2 = '-i' ];then
+	echo "Type the message ?"
 	read $msg
 	git commit -m $msg
 fi
-
+# Add a commit (am)
+if [ $1 = '-c' ] && [ $2 = '-a' ];then
+	echo "Type the message ?"
+	read $msg
+	git commit -am msg
+fi
 
 # Recap
 if [ $1 = '-recap' ];then
-	echo "${0}"
-	echo "${1:10}"
 	git status
 	sleep 15
-	git log
+	echo -e '\e[0;31]m' " ----- Here is the last commit -----"
+	git log | head -n 6
 fi
 
-# Supprimer les fichiers .class
-if [ $1 = "-r" ]; then
+# Delete .class files
+if [ $1 = "-del" ]; then
         rm main/*.class
         rm test/*.class
 fi
 
-# Créer une branche
+# Create a new branch
 if [ $1 = '-b' ] && [ $2 = '-c' ]; then
         git branch $3
 		git branch
 fi
 
-# Supprimer une branche
+# Delete a branch
 if [ $1 = '-b' ] && [ $2 = '-s' ]; then	
         git checkout $4
 		git branch -D $3
