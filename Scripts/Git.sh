@@ -5,18 +5,18 @@
 if [ $1 = '-a' ];then
 	git add $2
 	git status
-	echo -e '\e[1;33m' " !!! Don't forget to commit !!!"
+	echo -e '\e[0;35m' " !!! Don't forget to commit !!!"
 fi
 # Add a commit (m)
 if [ $1 = '-c' ] && [ $2 = '-i' ];then
 	echo "Type the message ?"
-	read $msg
+	read msg
 	git commit -m $msg
 fi
 # Add a commit (am)
 if [ $1 = '-c' ] && [ $2 = '-a' ];then
 	echo "Type the message ?"
-	read $msg
+	read msg
 	git commit -am msg
 fi
 
@@ -24,7 +24,7 @@ fi
 if [ $1 = '-recap' ];then
 	git status
 	sleep 15
-	echo -e '\e[0;31]m' " ----- Here is the last commit -----"
+	echo -e '\e[0;32m' " ----- Here is the last commit -----"
 	git log | head -n 6
 fi
 
