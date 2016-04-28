@@ -4,29 +4,34 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import main.Calculator;
+
 public class CalculatorTest {
-	double nb_1 = 18;
+	double nb_1 = 2;
 	double nb_2 = 3;
 	String answer = "no";
-	String op = "+";
 	
 	@Test
 	public final void testMain() {
-		assertTrue("You can only add, multiply, divide or substract !", op.equals("+") || op.equals("*")|| op.equals("/")|| op.equals("-"));
-		assertNotNull("Empty", op == "");
 		assertNotNull("Empty", nb_1);
 		assertNotNull("Empty", nb_2);
 	}
 	@Test
 	public final void testMultiply() {
-		assertTrue("Unable to multiply with 0", nb_1 != 0.0);
-		assertTrue("Unable to multiply with 0", nb_2 != 0.0);
+		assertEquals("Wrong multiply",6.0,Calculator.multiply(nb_1,nb_2),0.0);
 		
 	}
 	@Test
+	public final void testAdd() {
+		assertEquals("Wrond add",5,Calculator.add(nb_1, nb_2),0.0);
+	}
+	@Test
+	public final void testSubstract() {
+		assertEquals("Wrong substract",-1,Calculator.substract(nb_1, nb_2),0.00);
+	}
+	@Test
 	public final void testDivide() {
-		assertTrue("Unable to divide with 0", nb_1 != 0.0);
-		assertTrue("Unable to divide with 0", nb_2 != 0.0);
+		assertEquals("Wrong divide",0.66,Calculator.divide(nb_1, nb_2),0.01);
 	}
 
 	@Test
