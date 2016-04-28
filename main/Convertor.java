@@ -6,7 +6,8 @@ public class Convertor {
 
 	public static void main(String[] args) {
 		double number;
-		double number22;
+		String unit;
+		String res;
 		String convertor;
 		
 	while (!answer().equals("no")) {
@@ -31,8 +32,7 @@ public class Convertor {
 }
 	
 	public static double money(double number) {
-		String unit;
-		String res;
+		String unit,res;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Your money is in USD $, GBP £, NOK Krone or Euros € ?");
 		unit = sc.nextLine();
@@ -77,7 +77,7 @@ public class Convertor {
 		}
 		return number;
 	}
-	public static String distance(double number) {
+	public static double distance(double number) {
 	String unit;
 	String res;
 	Scanner sc = new Scanner(System.in);
@@ -90,29 +90,29 @@ public class Convertor {
 		if(res.equals("m")) { number = number * 1000; }
 		else if(res.equals("cm")) { number = number * 100000; }
 		if(res.equals("m")) { number = number * 1000000; }
-		return number + res;
+		return number;
 	}
 	while (unit.equals("m")) {
 		if(res.equals("km")) { number = number * 0.001; }
 		else if(res.equals("cm")) { number = number * 1000; }
 		if(res.equals("mm")) { number = number * 1000; }
-		return number + res;
+		return number;
 	}
 	while (unit.equals("cm")) {
 		if(res.equals("km")) { number = number * 0.00001; }
 		else if(res.equals("m")) { number = number * 0.01; }
 		if(res.equals("mm")) { number = number * 10; }
-		return number + res;
+		return number;
 	}
 	while (unit.equals("mm")) {
 		if(res.equals("km")) { number = number * 0.000001; }
 		else if(res.equals("m")) { number = number * 0.001; }
 		if(res.equals("cm")) { number = number * 0.1; }
-		return number + res;
+		return number;
 	}
-	return number + res;	
+	return number;	
 	}
-	public static String temperature(double number) {
+	public static double temperature(double number) {
 	String unit;
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Your measure is in Celsuis or Fahrenheit ?");
@@ -121,11 +121,11 @@ public class Convertor {
 		number = number - 32;
 		number = number *5;
 		number = number / 9;
-		return number + "°F"; }
+		return number; }
 	else {
 		number = number * 1.8;
 		number = number +32;
-		return number + "°C"; }
+		return number; }
 	}
 	
 	public static String answer() {
