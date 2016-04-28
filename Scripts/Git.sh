@@ -11,13 +11,13 @@ fi
 if [ $1 = '-c' ] && [ $2 = '-i' ];then
 	echo "Type the message ?"
 	read msg
-	git commit -m $msg
+	git commit -m '$msg'
 fi
 # Add a commit (am)
 if [ $1 = '-c' ] && [ $2 = '-a' ];then
 	echo "Type the message ?"
 	read msg
-	git commit -am msg
+	git commit -am $msg
 fi
 
 # Recap
