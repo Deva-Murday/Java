@@ -17,7 +17,7 @@ fi
 if [ $1 = '-c' ] && [ $2 = '-a' ];then
 	echo "Type the message ?"
 	read msg
-	git commit -am $msg
+	git commit -am "$msg"
 fi
 
 # Recap
